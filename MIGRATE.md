@@ -187,6 +187,15 @@
 - [x] Created placeholder spreadsheets for EN (`en-us`) and ES (`es-us`) with 18 keys each
 - [x] Placeholder keys include: carousel controls, accordion labels, timeline nav, video play, navigation toggle, and common UI strings
 
+### Block Library — COMPLETED (commit `827920b`)
+- [x] Created `tools/sidekick/library.json` manifest with 11 block references
+- [x] Created `block-library/` with 11 `.plain.html` example pages:
+  - Hero (2 variants: standard, no-image)
+  - Cards (2 variants: standard, menu-grid)
+  - Columns, Carousel, CTA Banner, Benefits
+  - Accordion, Tabs, Icon List, Timeline, Video Card
+- [x] Each example includes `library-metadata` (name + description) and realistic Subway content
+
 ### Phase 4: Content Migration — High-Priority Pages
 - [ ] Homepage (`/en-us`)
 - [ ] Menu page (`/en-us/menunutrition/menu`)
@@ -235,7 +244,7 @@
 - [x] **Core Blocks (6)**: Hero, Cards (x2 variants), Columns, CTA Banner, Benefits (commit `5bc9a63`)
 - [x] **Specialized Blocks (6)**: Carousel, Tabs, Accordion, Icon List, Timeline, Video Card (commit `ff9cf3a`)
 - [x] **Multi-language Placeholders**: `fetchPlaceholders()` with EN + ES support, 18 keys (commit `ff9cf3a`)
-- [ ] **Block Library**: library.json with all 12 blocks and variants documented
+- [x] **Block Library**: `tools/sidekick/library.json` + 11 example pages with 13 variants (commit `827920b`)
 - [ ] **Content Migration**: 24 pages across 7 templates
 - [ ] **Import Infrastructure**: Parsers and transformers for automated content import
 - [ ] **Design QA**: Visual fidelity, responsive, accessibility, performance
