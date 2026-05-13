@@ -173,13 +173,19 @@
 - [x] CTA Banner block — **new block** for promotional strips (image + text + button)
 - [x] Benefits block — **new block** for feature cards (heading + description grid, 3-col on desktop)
 
-### Phase 3: Specialized Blocks Development
-- [ ] Carousel block — sliding panels with dots + pause/play controls
-- [ ] Icon List block — horizontal icon + label row
-- [ ] Tabs block — navigation linking between sibling pages
-- [ ] Accordion block — expandable/collapsible content sections
-- [ ] Timeline block — interactive era/year milestones with horizontal scroll (custom JS)
-- [ ] Video Card block — thumbnail + play button + description overlay
+### Phase 3: Specialized Blocks Development — COMPLETED (commit `ff9cf3a`)
+- [x] Carousel block — OOTB JS adapted (removed `fetchPlaceholders` dep) + Subway green nav/indicators
+- [x] Tabs block — OOTB JS adapted + underline-style green active tab
+- [x] Accordion block — OOTB JS adapted + rounded corners, cream borders
+- [x] Icon List block — **new block** for horizontal icon + label rows (Catering benefits)
+- [x] Timeline block — **new block** with scrollable milestone cards + prev/next nav (History page)
+- [x] Video Card block — **new block** for thumbnail grid with play button overlay (History page)
+
+**Multi-language placeholder support** (added alongside Phase 3):
+- [x] Implemented `fetchPlaceholders()` in `scripts.js` with auto locale detection via `getLocalePrefix()`
+- [x] Updated 5 blocks to use locale-aware placeholders: Carousel, Accordion, Timeline, Video Card, Header
+- [x] Created placeholder spreadsheets for EN (`en-us`) and ES (`es-us`) with 18 keys each
+- [x] Placeholder keys include: carousel controls, accordion labels, timeline nav, video play, navigation toggle, and common UI strings
 
 ### Phase 4: Content Migration — High-Priority Pages
 - [ ] Homepage (`/en-us`)
@@ -227,7 +233,9 @@
 
 - [x] **Foundation**: DA project setup, design tokens, fonts, header/footer/hero block styling (commit `cf6fdb8`)
 - [x] **Core Blocks (6)**: Hero, Cards (x2 variants), Columns, CTA Banner, Benefits (commit `5bc9a63`)
-- [ ] **Specialized Blocks (6)**: Carousel, Icon List, Tabs, Accordion, Timeline, Video Card
+- [x] **Specialized Blocks (6)**: Carousel, Tabs, Accordion, Icon List, Timeline, Video Card (commit `ff9cf3a`)
+- [x] **Multi-language Placeholders**: `fetchPlaceholders()` with EN + ES support, 18 keys (commit `ff9cf3a`)
+- [ ] **Block Library**: library.json with all 12 blocks and variants documented
 - [ ] **Content Migration**: 24 pages across 7 templates
 - [ ] **Import Infrastructure**: Parsers and transformers for automated content import
 - [ ] **Design QA**: Visual fidelity, responsive, accessibility, performance
