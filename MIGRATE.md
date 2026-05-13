@@ -149,14 +149,21 @@
 
 ## Migration Phases
 
-### Phase 1: Foundation Setup
-- [ ] Initialize DA project with EDS boilerplate
-- [ ] Extract and configure design tokens as CSS custom properties in `styles/styles.css`
-- [ ] Set up font files and `styles/fonts.css`
-- [ ] Configure responsive breakpoints (mobile-first)
-- [ ] Build Header fragment (logo, hamburger nav, sign-in, cart)
-- [ ] Build Footer fragment (all link groups, social icons, app badges, legal links, copyright)
-- [ ] Create reusable CTA Banner "Order Now" fragment
+### Phase 1: Foundation Setup — COMPLETED (commit `cf6fdb8`)
+- [x] Initialize DA project with EDS boilerplate
+- [x] Extract and configure design tokens as CSS custom properties in `styles/styles.css`
+  - Subway brand colors: `--green-primary: #068332`, `--green-dark: #03421c`, `--cream: #fff6e9`, `--cream-dark: #f8ead8`
+  - Pill-shaped buttons (`border-radius: 9999px`), font-weight 600, green primary/secondary variants
+- [x] Set up font files and `styles/fonts.css`
+  - Downloaded 5 Subway Sans woff2 files: Regular (400), Medium (500), Semibold (600), Bold (700), Condensed Bold (700)
+  - Configured `@font-face` declarations with `font-display: swap`
+- [x] Configure responsive breakpoints (mobile-first: 600px / 900px / 1200px)
+- [x] Style Header block with Subway green navigation (`blocks/header/header.css`)
+- [x] Style Footer block with dark green background + cream text (`blocks/footer/footer.css`)
+- [x] Style Hero block with overlay text + responsive min-heights (`blocks/hero/hero.css`)
+- [ ] Build Header fragment content (logo, hamburger nav, sign-in, cart) — *content authoring pending*
+- [ ] Build Footer fragment content (all link groups, social icons, app badges, legal links) — *content authoring pending*
+- [ ] Create reusable CTA Banner "Order Now" fragment — *deferred to Phase 2*
 
 ### Phase 2: Core Blocks Development
 - [ ] Hero block — full-width image + overlay text + CTA (2 variants: standard + overlay)
@@ -218,7 +225,7 @@
 
 ## Checklist Summary
 
-- [ ] **Foundation**: DA project setup, design tokens, fonts, header, footer, CTA fragment
+- [x] **Foundation**: DA project setup, design tokens, fonts, header/footer/hero block styling (commit `cf6fdb8`)
 - [ ] **Core Blocks (6)**: Hero, Cards (x2 variants), Columns, CTA Banner, Benefits
 - [ ] **Specialized Blocks (6)**: Carousel, Icon List, Tabs, Accordion, Timeline, Video Card
 - [ ] **Content Migration**: 24 pages across 7 templates
