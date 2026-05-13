@@ -1,39 +1,25 @@
-/* hero section: full-bleed, no max-width constraint */
-.hero-container {
-  margin: 0;
-}
-
 .hero-container .hero-wrapper {
-  max-width: unset;
   padding: 0;
 }
 
-/* hero block */
 .hero {
   position: relative;
+  padding: 40px 24px 80px;
+  min-height: 300px;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  overflow: hidden;
-  min-height: 70vh;
-  padding: 0;
-  margin: 0;
 }
 
-/* row 1: background image — fill entire hero */
+/* first row contains the background image — position absolutely */
 .hero > div:first-child {
   position: absolute;
   inset: 0;
-  z-index: 1;
+  z-index: 0;
   overflow: hidden;
 }
 
-.hero > div:first-child picture {
-  display: block;
-  width: 100%;
-  height: 100%;
-}
-
+.hero > div:first-child picture,
 .hero > div:first-child img {
   width: 100%;
   height: 100%;
@@ -41,25 +27,19 @@
   display: block;
 }
 
-/* row 2: text content — sits above image */
+.hero > div:first-child::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgb(0 0 0 / 65%) 0%, rgb(0 0 0 / 25%) 50%, transparent 100%);
+}
+
+/* second row contains text content — left column, ~45% of hero width */
 .hero > div:last-child {
   position: relative;
-  z-index: 2;
-  display: flex;
-  align-items: flex-end;
-  padding: 160px 12px 24px;
-  min-height: 70vh;
-}
-
-.hero > div:last-child > div {
+  z-index: 1;
+  max-width: 560px;
   width: 100%;
-}
-
-/* eyebrow text */
-.hero > div:last-child > div > p:first-child {
-  font-size: var(--body-font-size-xs);
-  font-weight: 500;
-  margin-bottom: 4px;
 }
 
 .hero h1,
@@ -67,30 +47,19 @@
 .hero h3,
 .hero h4,
 .hero h5,
-.hero h6 {
-  color: var(--cream);
-  margin-top: 0;
-  margin-bottom: 8px;
-  line-height: 1;
-}
-
-/* stylelint-disable-next-line no-descending-specificity */
+.hero h6,
 .hero p {
   color: var(--cream);
-  font-size: var(--body-font-size-s);
-  line-height: 1.2;
 }
 
 .hero .button-wrapper {
-  margin-top: 16px;
+  margin-top: 8px;
 }
 
 .hero a.button.primary {
   background-color: var(--green-primary);
   border-color: var(--green-primary);
   color: var(--cream);
-  font-size: var(--body-font-size-s);
-  padding: 12px 24px;
 }
 
 .hero a.button.primary:hover {
@@ -109,7 +78,6 @@
   color: var(--green-dark);
 }
 
-/* no-image variant */
 .hero.no-image > div:first-child {
   position: static;
 }
@@ -120,44 +88,29 @@
 .hero.no-image h4,
 .hero.no-image h5,
 .hero.no-image h6,
-/* stylelint-disable-next-line no-descending-specificity */
 .hero.no-image p {
   color: var(--text-color);
 }
 
-/* desktop hero */
 @media (width >= 600px) {
   .hero {
-    min-height: 70vh;
-  }
-
-  .hero > div:last-child {
-    padding: 160px 24px 48px;
-    min-height: 70vh;
+    min-height: 400px;
   }
 }
 
 @media (width >= 900px) {
   .hero {
-    min-height: 70vh;
-  }
-
-  .hero > div:last-child {
-    padding: 160px 48px 60px;
-    min-height: 70vh;
-  }
-
-  .hero > div:last-child > div {
-    max-width: 1200px;
+    padding: 60px 32px 120px;
+    min-height: 500px;
   }
 }
 
-/* sub club cards overlap: cards block in hero section overlaps hero bottom */
+/* overlap: cards block in same section overlaps the hero bottom */
 .hero-container .cards-wrapper {
   position: relative;
-  z-index: 3;
+  z-index: 2;
   margin-top: -60px;
-  padding: 0 12px;
+  padding: 0 24px;
 }
 
 .hero-container .cards {
@@ -165,42 +118,75 @@
   margin: 0 auto;
 }
 
+/* horizontal promo banner layout for hero cards */
 .hero-container .cards > ul {
   grid-template-columns: 1fr;
+  gap: 12px;
 }
 
 .hero-container .cards > ul > li {
-  background-color: var(--cream);
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgb(0 0 0 / 10%);
-  border: none;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+  padding: 16px 24px;
+  background-color: var(--white);
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgb(0 0 0 / 10%);
+}
+
+.hero-container .cards .cards-card-image {
+  flex-shrink: 0;
+  line-height: 0;
+}
+
+.hero-container .cards .cards-card-image img {
+  height: 48px;
+  width: auto;
+  object-fit: contain;
+  border-radius: 0;
+}
+
+.hero-container .cards .cards-card-body {
+  flex: 1;
+  margin: 0;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-rows: auto auto;
+  align-items: center;
+  column-gap: 24px;
+  row-gap: 2px;
+}
+
+.hero-container .cards .cards-card-body h2,
+.hero-container .cards .cards-card-body h3,
+.hero-container .cards .cards-card-body h4,
+.hero-container .cards .cards-card-body h5 {
+  grid-column: 1;
+  grid-row: 1;
+  margin: 0;
+  font-size: var(--body-font-size-m);
+  font-weight: 700;
+}
+
+.hero-container .cards .cards-card-body p:not(.button-wrapper) {
+  grid-column: 1;
+  grid-row: 2;
+  margin: 0;
+  font-size: var(--body-font-size-xs);
+  color: var(--text-color);
+}
+
+.hero-container .cards .cards-card-body .button-wrapper {
+  grid-column: 2;
+  grid-row: 1 / 3;
+  margin: 0;
+  align-self: center;
 }
 
 @media (width >= 900px) {
   .hero-container .cards-wrapper {
     margin-top: -80px;
-    padding: 0 48px;
-  }
-
-  .hero-container .cards > ul > li {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 24px;
-  }
-
-  .hero-container .cards .cards-card-image {
-    flex: 0 0 auto;
-  }
-
-  .hero-container .cards .cards-card-image img {
-    width: 100px;
-    height: auto;
-    aspect-ratio: auto;
-    object-fit: contain;
-  }
-
-  .hero-container .cards .cards-card-body {
-    flex: 1;
+    padding: 0 32px;
   }
 }
