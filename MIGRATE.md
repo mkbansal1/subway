@@ -165,13 +165,13 @@
 - [ ] Build Footer fragment content (all link groups, social icons, app badges, legal links) — *content authoring pending*
 - [ ] Create reusable CTA Banner "Order Now" fragment — *deferred to Phase 2*
 
-### Phase 2: Core Blocks Development
-- [ ] Hero block — full-width image + overlay text + CTA (2 variants: standard + overlay)
-- [ ] Cards block — menu-grid variant (image + title link grid)
-- [ ] Cards block — promo variant (image + heading + description + CTA)
-- [ ] Columns block — image + text side-by-side with CTA
-- [ ] CTA Banner block — promotional strip with image, text, button
-- [ ] Benefits block — heading + description feature cards
+### Phase 2: Core Blocks Development — COMPLETED (commit `5bc9a63`)
+- [x] Hero block — OOTB JS with `no-image` variant + Subway overlay CSS
+- [x] Cards block — OOTB JS + Subway rounded cards + `menu-grid` variant (circular images for menu categories)
+- [x] Cards block — promo variant styling (rounded corners, hover shadow, CTA)
+- [x] Columns block — OOTB JS + Subway styling (rounded images, 32px desktop gap)
+- [x] CTA Banner block — **new block** for promotional strips (image + text + button)
+- [x] Benefits block — **new block** for feature cards (heading + description grid, 3-col on desktop)
 
 ### Phase 3: Specialized Blocks Development
 - [ ] Carousel block — sliding panels with dots + pause/play controls
@@ -226,7 +226,7 @@
 ## Checklist Summary
 
 - [x] **Foundation**: DA project setup, design tokens, fonts, header/footer/hero block styling (commit `cf6fdb8`)
-- [ ] **Core Blocks (6)**: Hero, Cards (x2 variants), Columns, CTA Banner, Benefits
+- [x] **Core Blocks (6)**: Hero, Cards (x2 variants), Columns, CTA Banner, Benefits (commit `5bc9a63`)
 - [ ] **Specialized Blocks (6)**: Carousel, Icon List, Tabs, Accordion, Timeline, Video Card
 - [ ] **Content Migration**: 24 pages across 7 templates
 - [ ] **Import Infrastructure**: Parsers and transformers for automated content import
