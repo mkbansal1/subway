@@ -12,6 +12,30 @@
   justify-content: flex-end;
 }
 
+/* first row contains the background image — position absolutely */
+.hero > div:first-child {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.hero > div:first-child picture,
+.hero > div:first-child img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* second row contains text content — sits above image */
+.hero > div:last-child {
+  position: relative;
+  z-index: 1;
+  max-width: 1200px;
+  width: 100%;
+}
+
 .hero h1,
 .hero h2,
 .hero h3,
@@ -19,16 +43,11 @@
 .hero h5,
 .hero h6,
 .hero p {
-  max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
   color: var(--cream);
 }
 
 .hero .button-wrapper {
-  max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
+  margin-top: 8px;
 }
 
 .hero a.button.primary {
@@ -53,6 +72,10 @@
   color: var(--green-dark);
 }
 
+.hero.no-image > div:first-child {
+  position: static;
+}
+
 .hero.no-image h1,
 .hero.no-image h2,
 .hero.no-image h3,
@@ -61,20 +84,6 @@
 .hero.no-image h6,
 .hero.no-image p {
   color: var(--text-color);
-}
-
-.hero picture {
-  position: absolute;
-  z-index: -1;
-  inset: 0;
-  object-fit: cover;
-  box-sizing: border-box;
-}
-
-.hero img {
-  object-fit: cover;
-  width: 100%;
-  height: 100%;
 }
 
 @media (width >= 600px) {
@@ -87,5 +96,31 @@
   .hero {
     padding: 60px 32px;
     min-height: 500px;
+  }
+}
+
+/* overlap: cards block in same section overlaps the hero bottom */
+.hero-container .cards-wrapper {
+  position: relative;
+  z-index: 2;
+  margin-top: -60px;
+  padding: 0 24px;
+}
+
+.hero-container .cards {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.hero-container .cards > ul > li {
+  background-color: var(--white);
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgb(0 0 0 / 10%);
+}
+
+@media (width >= 900px) {
+  .hero-container .cards-wrapper {
+    margin-top: -80px;
+    padding: 0 32px;
   }
 }
