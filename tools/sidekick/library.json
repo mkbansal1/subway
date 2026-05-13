@@ -1,0 +1,17 @@
+{
+  "blocks": {
+    "data": [
+      { "name": "Hero", "path": "/block-library/hero" },
+      { "name": "Cards", "path": "/block-library/cards" },
+      { "name": "Columns", "path": "/block-library/columns" },
+      { "name": "Carousel", "path": "/block-library/carousel" },
+      { "name": "CTA Banner", "path": "/block-library/cta-banner" },
+      { "name": "Benefits", "path": "/block-library/benefits" },
+      { "name": "Accordion", "path": "/block-library/accordion" },
+      { "name": "Tabs", "path": "/block-library/tabs" },
+      { "name": "Icon List", "path": "/block-library/icon-list" },
+      { "name": "Timeline", "path": "/block-library/timeline" },
+      { "name": "Video Card", "path": "/block-library/video-card" }
+    ]
+  }
+}
