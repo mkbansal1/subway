@@ -1,0 +1,128 @@
+.timeline {
+  position: relative;
+}
+
+.timeline .timeline-track {
+  display: flex;
+  gap: 24px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  padding: 16px 0 24px;
+}
+
+.timeline .timeline-track::-webkit-scrollbar {
+  height: 4px;
+}
+
+.timeline .timeline-track::-webkit-scrollbar-track {
+  background: var(--cream-dark);
+  border-radius: 2px;
+}
+
+.timeline .timeline-track::-webkit-scrollbar-thumb {
+  background: var(--green-primary);
+  border-radius: 2px;
+}
+
+.timeline .timeline-milestone {
+  flex: 0 0 280px;
+  scroll-snap-align: center;
+}
+
+.timeline .timeline-year {
+  font-size: var(--heading-font-size-s);
+  font-weight: 700;
+  color: var(--green-primary);
+  margin-bottom: 12px;
+  text-align: center;
+  position: relative;
+  padding-bottom: 12px;
+}
+
+.timeline .timeline-year::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 12px;
+  height: 12px;
+  background-color: var(--green-primary);
+  border-radius: 50%;
+}
+
+.timeline .timeline-card {
+  background-color: var(--white);
+  border-radius: 12px;
+  border: 1px solid var(--cream-dark);
+  overflow: hidden;
+}
+
+.timeline .timeline-card-image {
+  line-height: 0;
+}
+
+.timeline .timeline-card-image img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+.timeline .timeline-card-content {
+  padding: 16px;
+}
+
+.timeline .timeline-card-content h3,
+.timeline .timeline-card-content h4 {
+  margin-top: 0;
+  font-size: var(--body-font-size-m);
+}
+
+.timeline .timeline-card-content p {
+  font-size: var(--body-font-size-xs);
+  margin-bottom: 0;
+}
+
+.timeline .timeline-nav {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 16px;
+}
+
+/* stylelint-disable-next-line no-descending-specificity */
+.timeline .timeline-nav button {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 2px solid var(--green-dark);
+  background-color: transparent;
+  color: var(--green-dark);
+  font-size: 24px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s, color 0.2s;
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+}
+
+.timeline .timeline-nav button:hover {
+  background-color: var(--green-dark);
+  color: var(--cream);
+}
+
+@media (width >= 600px) {
+  .timeline .timeline-milestone {
+    flex: 0 0 320px;
+  }
+}
+
+@media (width >= 900px) {
+  .timeline .timeline-milestone {
+    flex: 0 0 350px;
+  }
+}

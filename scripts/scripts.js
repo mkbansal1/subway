@@ -10,7 +10,50 @@ import {
   loadSection,
   loadSections,
   loadCSS,
+  toCamelCase,
 } from './aem.js';
+
+const placeholdersCache = {};
+
+/**
+ * Returns the locale prefix based on the current URL path.
+ * e.g., /en-us/some/page returns '/en-us'
+ * @returns {string} locale prefix or empty string
+ */
+function getLocalePrefix() {
+  const { pathname } = window.location;
+  const segments = pathname.split('/').filter(Boolean);
+  if (segments.length > 0 && /^[a-z]{2}(-[a-z]{2})?$/i.test(segments[0])) {
+    return `/${segments[0]}`;
+  }
+  return '';
+}
+
+/**
+ * Fetches placeholders from the placeholders.json endpoint.
+ * Automatically resolves locale prefix from the current URL.
+ * @returns {Promise<Object>} key-value map of placeholders
+ */
+export async function fetchPlaceholders() {
+  const prefix = getLocalePrefix();
+  const cacheKey = prefix || 'default';
+  if (placeholdersCache[cacheKey]) return placeholdersCache[cacheKey];
+
+  const url = `${prefix}/placeholders.json`;
+  const resp = await fetch(url);
+  if (!resp.ok) {
+    placeholdersCache[cacheKey] = {};
+    return placeholdersCache[cacheKey];
+  }
+
+  const json = await resp.json();
+  const placeholders = {};
+  json.data.forEach((row) => {
+    placeholders[toCamelCase(row.Key)] = row.Text;
+  });
+  placeholdersCache[cacheKey] = placeholders;
+  return placeholders;
+}
 
 /**
  * Builds hero block and prepends to main in a new section.

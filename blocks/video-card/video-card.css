@@ -1,0 +1,91 @@
+.video-card > ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+.video-card .video-card-item {
+  border-radius: 12px;
+  overflow: hidden;
+  background-color: var(--white);
+  border: 1px solid var(--cream-dark);
+  cursor: pointer;
+  transition: box-shadow 0.2s;
+}
+
+.video-card .video-card-item:hover {
+  box-shadow: 0 4px 16px rgb(0 0 0 / 10%);
+}
+
+.video-card .video-card-thumbnail {
+  position: relative;
+  line-height: 0;
+}
+
+.video-card .video-card-thumbnail img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+.video-card .video-card-play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: none;
+  background-color: var(--green-primary);
+  cursor: pointer;
+  margin: 0;
+  padding: 0;
+  transition: background-color 0.2s;
+}
+
+.video-card .video-card-play::after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 10px 0 10px 18px;
+  border-color: transparent transparent transparent var(--cream);
+  margin-left: 4px;
+}
+
+.video-card .video-card-play:hover {
+  background-color: var(--green-dark);
+}
+
+.video-card .video-card-body {
+  padding: 16px;
+}
+
+.video-card .video-card-body h3,
+.video-card .video-card-body h4 {
+  margin-top: 0;
+  font-size: var(--body-font-size-m);
+}
+
+.video-card .video-card-body p {
+  font-size: var(--body-font-size-xs);
+  margin-bottom: 0;
+}
+
+@media (width >= 600px) {
+  .video-card > ul {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (width >= 900px) {
+  .video-card > ul {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+  }
+}

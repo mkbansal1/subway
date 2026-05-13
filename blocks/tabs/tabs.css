@@ -1,0 +1,57 @@
+.tabs .tabs-list {
+  display: flex;
+  gap: 0;
+  max-width: 100%;
+  overflow-x: auto;
+  border-bottom: 2px solid var(--cream-dark);
+}
+
+.tabs .tabs-list button {
+  flex: 0 0 max-content;
+  margin: 0;
+  border: none;
+  border-bottom: 3px solid transparent;
+  border-radius: 0;
+  padding: 12px 20px;
+  background-color: transparent;
+  color: var(--green-dark);
+  font-size: var(--body-font-size-s);
+  font-weight: 500;
+  line-height: 1.25;
+  text-align: center;
+  cursor: pointer;
+  transition: border-color 0.2s, color 0.2s;
+  white-space: nowrap;
+  overflow: visible;
+  text-overflow: unset;
+}
+
+.tabs .tabs-list button p {
+  margin: 0;
+}
+
+.tabs .tabs-list button:hover {
+  color: var(--green-primary);
+}
+
+.tabs .tabs-list button[aria-selected='true'] {
+  border-bottom-color: var(--green-primary);
+  color: var(--green-primary);
+  font-weight: 600;
+  cursor: default;
+}
+
+.tabs .tabs-panel {
+  padding: 24px 0;
+}
+
+.tabs .tabs-panel[aria-hidden='true'] {
+  display: none;
+}
+
+@media (width >= 600px) {
+  .tabs .tabs-list button {
+    font-size: var(--body-font-size-m);
+    padding: 14px 24px;
+  }
+}
