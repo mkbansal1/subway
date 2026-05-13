@@ -1,11 +1,10 @@
 .hero-container .hero-wrapper {
-  max-width: unset;
   padding: 0;
 }
 
 .hero {
   position: relative;
-  padding: 40px 24px;
+  padding: 40px 24px 80px;
   min-height: 300px;
   display: flex;
   flex-direction: column;
@@ -28,11 +27,18 @@
   display: block;
 }
 
-/* second row contains text content — sits above image */
+.hero > div:first-child::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgb(0 0 0 / 65%) 0%, rgb(0 0 0 / 25%) 50%, transparent 100%);
+}
+
+/* second row contains text content — left column, ~45% of hero width */
 .hero > div:last-child {
   position: relative;
   z-index: 1;
-  max-width: 1200px;
+  max-width: 560px;
   width: 100%;
 }
 
@@ -94,7 +100,7 @@
 
 @media (width >= 900px) {
   .hero {
-    padding: 60px 32px;
+    padding: 60px 32px 120px;
     min-height: 500px;
   }
 }
@@ -112,10 +118,70 @@
   margin: 0 auto;
 }
 
+/* horizontal promo banner layout for hero cards */
+.hero-container .cards > ul {
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+
 .hero-container .cards > ul > li {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+  padding: 16px 24px;
   background-color: var(--white);
   border-radius: 12px;
   box-shadow: 0 4px 16px rgb(0 0 0 / 10%);
+}
+
+.hero-container .cards .cards-card-image {
+  flex-shrink: 0;
+  line-height: 0;
+}
+
+.hero-container .cards .cards-card-image img {
+  height: 48px;
+  width: auto;
+  object-fit: contain;
+  border-radius: 0;
+}
+
+.hero-container .cards .cards-card-body {
+  flex: 1;
+  margin: 0;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-rows: auto auto;
+  align-items: center;
+  column-gap: 24px;
+  row-gap: 2px;
+}
+
+.hero-container .cards .cards-card-body h2,
+.hero-container .cards .cards-card-body h3,
+.hero-container .cards .cards-card-body h4,
+.hero-container .cards .cards-card-body h5 {
+  grid-column: 1;
+  grid-row: 1;
+  margin: 0;
+  font-size: var(--body-font-size-m);
+  font-weight: 700;
+}
+
+.hero-container .cards .cards-card-body p:not(.button-wrapper) {
+  grid-column: 1;
+  grid-row: 2;
+  margin: 0;
+  font-size: var(--body-font-size-xs);
+  color: var(--text-color);
+}
+
+.hero-container .cards .cards-card-body .button-wrapper {
+  grid-column: 2;
+  grid-row: 1 / 3;
+  margin: 0;
+  align-self: center;
 }
 
 @media (width >= 900px) {
