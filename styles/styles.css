@@ -129,7 +129,7 @@ pre {
 }
 
 main > div {
-  margin: 40px 16px;
+  margin: 0;
 }
 
 input,
@@ -284,12 +284,8 @@ main img {
 
 /* sections */
 main > .section {
-  margin: 40px 0;
-}
-
-main > .section > div {
-  max-width: 1200px;
-  margin: auto;
+  max-width: 1280px;
+  margin: 40px auto;
   padding: 0 24px;
 }
 
@@ -298,7 +294,7 @@ main > .section:first-of-type {
 }
 
 @media (width >= 900px) {
-  main > .section > div {
+  main > .section {
     padding: 0 32px;
   }
 }

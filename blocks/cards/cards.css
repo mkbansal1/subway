@@ -256,7 +256,7 @@
 
   /* wider padding for menu section on desktop */
   .cards-container > div {
-    max-width: 1400px;
+    max-width: 1280px;
     padding: 0 64px;
   }
 }
