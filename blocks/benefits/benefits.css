@@ -9,7 +9,7 @@
 
 .benefits .benefits-item {
   background-color: var(--white);
-  border-radius: 12px;
+  border-radius: var(--border-radius-card);
   padding: 24px;
   border: 1px solid var(--cream-dark);
 }

@@ -34,6 +34,17 @@
 
   /* nav height */
   --nav-height: 82px;
+
+  /* layout */
+  --max-width: 1280px;
+
+  /* border radius */
+  --border-radius-card: 12px;
+  --border-radius-s: 8px;
+
+  /* shadows & borders */
+  --shadow-card: 0 4px 16px rgb(0 0 0 / 10%);
+  --border-color-subtle: rgb(0 0 0 / 15%);
 }
 
 /* fallback font */
@@ -122,7 +133,7 @@ pre {
 
 pre {
   padding: 16px;
-  border-radius: 8px;
+  border-radius: var(--border-radius-s);
   background-color: var(--light-color);
   overflow-x: auto;
   white-space: pre;
@@ -284,7 +295,7 @@ main img {
 
 /* sections */
 main > .section {
-  max-width: 1280px;
+  max-width: var(--max-width);
   margin: 0 auto;
   padding: 40px 24px;
 }

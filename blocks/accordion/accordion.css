@@ -1,6 +1,6 @@
 .accordion details {
   border: 1px solid var(--cream-dark);
-  border-radius: 8px;
+  border-radius: var(--border-radius-s);
   overflow: hidden;
 }
 

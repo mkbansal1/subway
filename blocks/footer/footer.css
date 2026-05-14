@@ -49,7 +49,7 @@ footer .footer .footer-legal p:last-child {
 /* -- Social / Logo row --------------------------------------- */
 footer .footer .footer-social-row {
   padding: 28px 0;
-  border-bottom: 1px solid rgb(0 0 0 / 15%);
+  border-bottom: 1px solid var(--border-color-subtle);
 }
 
 /* subway circular logo */
@@ -88,7 +88,7 @@ footer .footer .footer-social-row .columns > div > div:last-child > p img {
   display: block;
   height: 40px;
   width: auto;
-  border-radius: 8px;
+  border-radius: var(--border-radius-s);
   object-fit: contain;
 }
 
@@ -141,7 +141,7 @@ footer .footer .footer-nav h4 {
   justify-content: space-between;
   padding: 16px 0;
   cursor: pointer;
-  border-bottom: 1px solid rgb(0 0 0 / 15%);
+  border-bottom: 1px solid var(--border-color-subtle);
 }
 
 /* stylelint-disable-next-line no-descending-specificity -- .footer-nav and .footer-social-row are mutually exclusive */
@@ -208,7 +208,7 @@ footer .footer .footer-nav .columns > div > div:nth-child(2) {
 footer .footer .footer-nav .columns > div > div:last-child {
   padding-top: 16px;
   padding-bottom: 20px;
-  border-bottom: 1px solid rgb(0 0 0 / 15%);
+  border-bottom: 1px solid var(--border-color-subtle);
 }
 
 /* franchise/cares/partners column: icon + label side by side */
@@ -228,7 +228,7 @@ footer .footer .footer-nav .columns > div > div:last-child ul li img {
   display: block;
   width: 32px;
   height: 32px;
-  border-radius: 8px;
+  border-radius: var(--border-radius-s);
   object-fit: cover;
 }
 
@@ -240,7 +240,7 @@ footer .footer .footer-nav .columns > div > div:last-child ul li img {
 
   footer .footer .footer-nav {
     padding: 56px 0 48px;
-    border-bottom: 1px solid rgb(0 0 0 / 15%);
+    border-bottom: 1px solid var(--border-color-subtle);
   }
 
   footer .footer .footer-nav h4 {

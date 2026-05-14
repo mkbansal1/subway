@@ -54,7 +54,7 @@
 
 .timeline .timeline-card {
   background-color: var(--white);
-  border-radius: 12px;
+  border-radius: var(--border-radius-card);
   border: 1px solid var(--cream-dark);
   overflow: hidden;
 }

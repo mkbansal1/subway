@@ -36,8 +36,8 @@ header nav[aria-expanded='true'] {
     display: flex;
     justify-content: space-between;
     gap: 0 32px;
-    max-width: 1264px;
-    padding: 0 32px;
+    max-width: var(--max-width);
+    padding: 0 24px;
   }
 
   header nav[aria-expanded='true'] {
@@ -152,7 +152,7 @@ header .nav-brand {
 }
 
 header nav .nav-brand img {
-  width: 128px;
+  width: 150px;
   height: auto;
 }
 
@@ -250,7 +250,7 @@ header nav .nav-sections ul > li > ul > li {
     padding: 16px;
     background-color: var(--cream-dark);
     white-space: initial;
-    border-radius: 8px;
+    border-radius: var(--border-radius-s);
   }
 
   header nav .nav-sections .default-content-wrapper > ul > li > ul::before {

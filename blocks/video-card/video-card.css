@@ -8,7 +8,7 @@
 }
 
 .video-card .video-card-item {
-  border-radius: 12px;
+  border-radius: var(--border-radius-card);
   overflow: hidden;
   background-color: var(--white);
   border: 1px solid var(--cream-dark);
@@ -17,7 +17,7 @@
 }
 
 .video-card .video-card-item:hover {
-  box-shadow: 0 4px 16px rgb(0 0 0 / 10%);
+  box-shadow: var(--shadow-card);
 }
 
 .video-card .video-card-thumbnail {

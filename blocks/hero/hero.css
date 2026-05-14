@@ -4,8 +4,9 @@
 
 .hero {
   position: relative;
-  padding: 120px 24px 80px;
-  min-height: 400px;
+  box-sizing: border-box;
+  padding: 120px 24px 140px;
+  min-height: 500px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -19,7 +20,12 @@
   overflow: hidden;
 }
 
-.hero > div:first-child picture,
+.hero > div:first-child picture {
+  position: absolute;
+  inset: 0;
+  display: block;
+}
+
 .hero > div:first-child img {
   width: 100%;
   height: 100%;
@@ -94,8 +100,8 @@
 
 @media (width >= 600px) {
   .hero {
-    min-height: 500px;
-    padding: 140px 32px 100px;
+    min-height: 580px;
+    padding: 140px 32px 140px;
   }
 
   .hero h2 {
@@ -105,17 +111,26 @@
 
 @media (width >= 900px) {
   .hero {
-    padding: 140px 100px 120px;
-    min-height: 600px;
+    padding: 150px 60px;
+    min-height: 720px;
+
+    p.button-wrapper {
+      padding-top: 2rem;
+    }
   }
 
   .hero > div:last-child {
     max-width: 640px;
+
+    div > p {
+      margin-top: 0;
+    }
   }
 
   .hero h2 {
     font-size: 64px;
     line-height: 1;
+    margin-top: 20px;
   }
 }
 
@@ -123,12 +138,12 @@
 .hero-container .cards-wrapper {
   position: relative;
   z-index: 2;
-  margin-top: -60px;
+  margin-top: -120px;
   padding: 0 24px;
 }
 
 .hero-container .cards {
-  max-width: 1280px;
+  max-width: var(--max-width);
   margin: 0 auto;
 }
 
@@ -144,9 +159,9 @@
   align-items: center;
   gap: 20px;
   padding: 16px 24px;
-  background-color: var(--white);
-  border-radius: 12px;
-  box-shadow: 0 4px 16px rgb(0 0 0 / 10%);
+  background-color: var(--background-color);
+  border-radius: var(--border-radius-card);
+  box-shadow: var(--shadow-card);
 }
 
 .hero-container .cards .cards-card-image {
@@ -199,7 +214,7 @@
 
 @media (width >= 900px) {
   .hero-container .cards-wrapper {
-    margin-top: -80px;
-    padding: 0 32px;
+    margin-top: -130px;
+    padding: 0 60px;
   }
 }

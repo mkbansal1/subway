@@ -10,7 +10,7 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  border-radius: 12px;
+  border-radius: var(--border-radius-card);
 }
 
 /* image row — fills entire block as background */
@@ -36,7 +36,7 @@
 }
 
 .teaser .teaser-content > div {
-  max-width: 1280px;
+  max-width: var(--max-width);
 }
 
 .teaser .teaser-content h1,
@@ -129,7 +129,7 @@
     min-height: 500px;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
+    justify-content: center;
   }
 
   .teaser .teaser-content > div {
