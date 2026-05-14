@@ -1,0 +1,156 @@
+/* teaser: full-bleed section */
+.teaser-container {
+  margin: 0;
+}
+
+.teaser-container .teaser-wrapper {
+  max-width: unset;
+  padding: 0;
+}
+
+/* base teaser — mobile first */
+.teaser {
+  position: relative;
+  overflow: hidden;
+  min-height: 60vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+/* image row — fills entire block as background */
+.teaser .teaser-image {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.teaser .teaser-image picture,
+.teaser .teaser-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* content row — sits above image */
+.teaser .teaser-content {
+  position: relative;
+  z-index: 1;
+  padding: 24px 16px 32px;
+}
+
+.teaser .teaser-content > div {
+  max-width: 1200px;
+}
+
+.teaser .teaser-content h1,
+.teaser .teaser-content h2,
+.teaser .teaser-content h3 {
+  margin-top: 4px;
+  margin-bottom: 12px;
+  line-height: 1;
+}
+
+.teaser .teaser-content p {
+  margin-top: 0;
+  margin-bottom: 12px;
+  line-height: 1.3;
+}
+
+/* eyebrow: first paragraph before heading */
+.teaser .teaser-content > div > p:first-child {
+  font-size: var(--body-font-size-xs);
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+
+.teaser .teaser-content .button-wrapper {
+  margin-top: 16px;
+}
+
+/*
+ * text-overlay variant — text overlays the image (default layout already does this)
+ * kept as explicit variant for clarity
+ */
+.teaser.text-overlay .teaser-content {
+  position: relative;
+  z-index: 1;
+}
+
+/*
+ * dark-bg variant — image is dark, so text should be light/cream
+ */
+.teaser.dark-bg .teaser-content h1,
+.teaser.dark-bg .teaser-content h2,
+.teaser.dark-bg .teaser-content h3,
+.teaser.dark-bg .teaser-content h4,
+.teaser.dark-bg .teaser-content h5,
+.teaser.dark-bg .teaser-content h6,
+/* stylelint-disable-next-line no-descending-specificity */
+.teaser.dark-bg .teaser-content p {
+  color: var(--cream);
+}
+
+.teaser.dark-bg .teaser-content a.button.primary {
+  background-color: transparent;
+  border: 2px solid var(--cream);
+  color: var(--cream);
+}
+
+.teaser.dark-bg .teaser-content a.button.primary:hover {
+  background-color: var(--green-primary);
+  border-color: var(--green-primary);
+  color: var(--cream);
+}
+
+.teaser.dark-bg .teaser-content a.button.secondary {
+  border-color: var(--cream);
+  color: var(--cream);
+  background-color: transparent;
+}
+
+.teaser.dark-bg .teaser-content a.button.secondary:hover {
+  background-color: var(--green-primary);
+  border-color: var(--green-primary);
+  color: var(--cream);
+}
+
+/* tablet */
+@media (width >= 600px) {
+  .teaser {
+    min-height: 65vh;
+  }
+
+  .teaser .teaser-content {
+    padding: 40px 32px 48px;
+  }
+
+  .teaser .teaser-content > div {
+    max-width: 70%;
+  }
+}
+
+/* desktop */
+@media (width >= 900px) {
+  .teaser {
+    min-height: 70vh;
+  }
+
+  .teaser .teaser-content {
+    padding: 60px 64px 80px;
+  }
+
+  .teaser .teaser-content > div {
+    max-width: 60%;
+  }
+
+  .teaser .teaser-content h2 {
+    font-size: var(--heading-font-size-xxl);
+    line-height: 1;
+  }
+
+  .teaser .teaser-content p {
+    font-size: var(--body-font-size-m);
+  }
+}
