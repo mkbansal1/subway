@@ -28,15 +28,11 @@
   display: block;
 }
 
-/* content row — sits above image */
+/* content row — sits above image, text starts from top on mobile */
 .teaser .teaser-content {
   position: relative;
   z-index: 1;
   padding: 24px 16px 32px;
-  min-height: 400px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
 }
 
 .teaser .teaser-content > div {
@@ -119,7 +115,6 @@
 @media (width >= 600px) {
   .teaser .teaser-content {
     padding: 40px 32px 48px;
-    min-height: 450px;
   }
 
   .teaser .teaser-content > div {
@@ -127,11 +122,14 @@
   }
 }
 
-/* desktop */
+/* desktop — text pushed to bottom */
 @media (width >= 900px) {
   .teaser .teaser-content {
     padding: 48px 64px 60px;
     min-height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
   }
 
   .teaser .teaser-content > div {
