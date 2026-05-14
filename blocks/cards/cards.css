@@ -282,6 +282,10 @@
   justify-content: flex-end;
 }
 
+.cards.text-overlay > ul > li:hover {
+  box-shadow: none;
+}
+
 .cards.text-overlay .cards-card-image {
   position: absolute;
   inset: 0;
@@ -302,8 +306,8 @@
   z-index: 1;
   margin: 0;
   padding: 24px;
-  background-color: rgb(255 255 255 / 85%);
-  border-radius: 0 0 12px 12px;
+  background-color: var(--cream);
+  border-radius: 12px 12px 0 0;
 }
 
 .cards.text-overlay .cards-card-body h4,
@@ -337,6 +341,6 @@
   .cards.text-overlay .cards-card-body {
     padding: 32px;
     max-width: 55%;
-    border-radius: 0 0 0 12px;
+    border-radius: 12px 0 0;
   }
 }
