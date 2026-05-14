@@ -7,10 +7,10 @@
 .teaser {
   position: relative;
   overflow: hidden;
-  min-height: 60vh;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
+  justify-content: flex-start;
+  border-radius: 12px;
 }
 
 /* image row — fills entire block as background */
@@ -33,6 +33,10 @@
   position: relative;
   z-index: 1;
   padding: 24px 16px 32px;
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
 }
 
 .teaser .teaser-content > div {
@@ -113,12 +117,9 @@
 
 /* tablet */
 @media (width >= 600px) {
-  .teaser {
-    min-height: 65vh;
-  }
-
   .teaser .teaser-content {
     padding: 40px 32px 48px;
+    min-height: 450px;
   }
 
   .teaser .teaser-content > div {
@@ -128,12 +129,9 @@
 
 /* desktop */
 @media (width >= 900px) {
-  .teaser {
-    min-height: 70vh;
-  }
-
   .teaser .teaser-content {
-    padding: 60px 64px 80px;
+    padding: 48px 64px 60px;
+    min-height: 500px;
   }
 
   .teaser .teaser-content > div {
