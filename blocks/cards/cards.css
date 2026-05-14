@@ -161,6 +161,7 @@
   width: 140px;
   height: auto;
   object-fit: contain;
+  mix-blend-mode: darken;
 }
 
 /* desktop heading + button row for menu section */
