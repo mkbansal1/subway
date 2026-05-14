@@ -285,17 +285,21 @@ main img {
 /* sections */
 main > .section {
   max-width: 1280px;
-  margin: 40px auto;
-  padding: 0 24px;
+  margin: 0 auto;
+  padding: 40px 24px;
 }
 
 main > .section:first-of-type {
-  margin-top: 0;
+  padding-top: 0;
 }
 
 @media (width >= 900px) {
   main > .section {
-    padding: 0 32px;
+    padding: 40px 32px;
+  }
+
+  main > .section:first-of-type {
+    padding-top: 0;
   }
 }
 
