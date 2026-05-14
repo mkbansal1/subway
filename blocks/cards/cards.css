@@ -96,7 +96,46 @@
   color: var(--green-primary);
 }
 
+/* override button styling inside menu-grid — titles should be plain text links */
+.cards.menu-grid .cards-card-body .button-wrapper {
+  margin: 0;
+}
+
+.cards.menu-grid .cards-card-body a.button {
+  background-color: transparent;
+  border-color: transparent;
+  color: var(--green-dark);
+  padding: 0;
+  font-size: var(--heading-font-size-m);
+  font-weight: 500;
+  white-space: normal;
+  text-align: left;
+  overflow: visible;
+}
+
+.cards.menu-grid .cards-card-body a.button:hover {
+  background-color: transparent;
+  border-color: transparent;
+  color: var(--green-primary);
+  text-decoration: none;
+}
+
+/* image link inside menu-grid should not look like a button */
+.cards.menu-grid .cards-card-image .button-wrapper {
+  margin: 0;
+}
+
+/* stylelint-disable-next-line no-descending-specificity */
+.cards.menu-grid .cards-card-image a.button {
+  background-color: transparent;
+  border-color: transparent;
+  padding: 0;
+  border-radius: 0;
+  display: block;
+}
+
 /* desktop heading + button row for menu section */
+/* stylelint-disable-next-line no-descending-specificity */
 .cards-container .default-content-wrapper {
   display: flex;
   flex-wrap: wrap;
@@ -110,6 +149,7 @@
 }
 
 /* mobile: Start Order below cards */
+/* stylelint-disable-next-line no-descending-specificity */
 .cards-container .default-content-wrapper .button-wrapper {
   order: 1;
 }
