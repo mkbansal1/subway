@@ -1,10 +1,5 @@
-/* teaser: full-bleed section */
-.teaser-container {
-  margin: 0;
-}
-
+/* teaser: constrained to page max-width */
 .teaser-container .teaser-wrapper {
-  max-width: unset;
   padding: 0;
 }
 
