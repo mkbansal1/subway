@@ -222,9 +222,9 @@ a.button.secondary:hover,
 a.button.secondary:focus-visible,
 button.button.secondary:hover,
 button.button.secondary:focus-visible {
-  border-color: var(--green-dark);
-  background-color: var(--light-color);
-  color: var(--green-dark);
+  border-color: var(--green-primary);
+  background-color: var(--green-primary);
+  color: var(--cream);
 }
 
 a.button.secondary[aria-disabled="true"],
