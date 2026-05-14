@@ -2,26 +2,18 @@ footer {
   background-color: var(--cream-dark);
   color: var(--green-dark);
   font-size: var(--body-font-size-xs);
-  padding: 0 12px 20px;
+  padding: 0 20px;
 }
 
-footer .footer > div {
-  margin: auto;
+footer .footer {
   max-width: 1264px;
-  padding: 24px 0 0;
+  margin: 0 auto;
 }
 
-footer .footer > div > div {
-  padding: 16px 0;
-  border-top: 1px solid rgb(0 0 0 / 10%);
-}
-
-footer .footer > div > div:first-child {
-  border-top: none;
-}
-
-footer .footer p {
-  margin: 0 0 8px;
+/* sections inside footer carry no global section padding */
+footer .footer .section {
+  padding: 0;
+  margin: 0;
 }
 
 footer .footer a:any-link {
@@ -34,46 +26,290 @@ footer .footer a:hover {
   text-decoration: underline;
 }
 
-footer .footer ul {
+/* reset columns default width:100% and border-radius for all footer images */
+footer .footer .columns img {
+  border-radius: 0;
+  width: auto;
+}
+
+/* -- Legal row ----------------------------------------------- */
+footer .footer .footer-legal {
+  padding: 24px 0 36px;
+}
+
+footer .footer .footer-legal p {
+  margin: 0 0 8px;
+  line-height: 1.6;
+}
+
+footer .footer .footer-legal p:last-child {
+  margin-bottom: 0;
+}
+
+/* -- Social / Logo row --------------------------------------- */
+footer .footer .footer-social-row {
+  padding: 28px 0;
+  border-bottom: 1px solid rgb(0 0 0 / 15%);
+}
+
+/* subway circular logo */
+footer .footer .footer-social-row .columns-img-col img {
+  display: block;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* social row: links/badges first, logo at the very bottom on mobile */
+footer .footer .footer-social-row .columns > div > .columns-img-col {
+  order: 3;
+  padding-top: 24px;
+}
+
+footer .footer .footer-social-row .columns > div > div:not(.columns-img-col) {
+  order: 0;
+}
+
+/* app store badges: direct-child <p> after the ul -- lower spec so comes first */
+footer .footer .footer-social-row .columns > div > div:last-child > p {
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+}
+
+footer .footer .footer-social-row .columns > div > div:last-child > p br {
+  display: none; /* flex row handles spacing, <br> not needed */
+}
+
+footer .footer .footer-social-row .columns > div > div:last-child > p img {
+  display: block;
+  height: 40px;
+  width: auto;
+  border-radius: 8px;
+  object-fit: contain;
+}
+
+/* social icons: ul is a horizontal row of icon images */
+footer .footer .footer-social-row .columns > div > div:last-child ul {
   list-style: none;
   padding: 0;
-  margin: 0 0 16px;
-}
-
-footer .footer ul li {
-  margin-bottom: 8px;
-}
-
-footer .footer h2,
-footer .footer h3,
-footer .footer h4 {
-  color: var(--green-dark);
-  font-size: var(--body-font-size-xs);
-  font-weight: 700;
   margin: 0 0 12px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
 }
 
+footer .footer .footer-social-row .columns > div > div:last-child ul li {
+  display: flex;
+  gap: 10px;
+  padding: 0;
+}
+
+/* hide empty placeholder li */
+footer .footer .footer-social-row .columns > div > div:last-child ul li:empty {
+  display: none;
+}
+
+footer .footer .footer-social-row .columns > div > div:last-child ul li p {
+  margin: 0;
+}
+
+footer .footer .footer-social-row .columns > div > div:last-child ul li img {
+  display: block;
+  width: 36px;
+  height: 36px;
+  border-radius: 6px;
+  object-fit: cover;
+}
+
+/* -- Nav row ------------------------------------------------- */
+footer .footer .footer-nav {
+  padding: 0;
+}
+
+footer .footer .footer-nav h4 {
+  font-size: var(--body-font-size-s);
+  font-weight: 700;
+  margin: 0;
+  color: var(--green-dark);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 0;
+  cursor: pointer;
+  border-bottom: 1px solid rgb(0 0 0 / 15%);
+}
+
+/* stylelint-disable-next-line no-descending-specificity -- .footer-nav and .footer-social-row are mutually exclusive */
+footer .footer .footer-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* stylelint-disable-next-line no-descending-specificity -- .footer-nav and .footer-social-row are mutually exclusive */
+footer .footer .footer-nav ul li {
+  margin: 0;
+}
+
+/* chevron visible on mobile */
+footer .footer-nav-chevron {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-right: 2px solid currentcolor;
+  border-bottom: 2px solid currentcolor;
+  transform: rotate(45deg) translateY(-2px);
+  transition: transform 0.2s ease;
+  flex-shrink: 0;
+}
+
+footer .footer-nav.footer-nav-expanded .footer-nav-chevron {
+  transform: rotate(-135deg) translateY(-2px);
+}
+
+/* keep nav columns in authored order on all screen sizes */
+/* stylelint-disable-next-line no-descending-specificity -- .footer-nav and .footer-social-row are mutually exclusive */
+footer .footer .footer-nav .columns > div > div,
+footer .footer .footer-nav .columns > div > .columns-img-col {
+  order: unset;
+}
+
+/* stylelint-disable-next-line no-descending-specificity -- .footer-nav and .footer-social-row are mutually exclusive */
+footer .footer .footer-nav .columns > div {
+  gap: 0;
+}
+
+/* accordion controls col 1 links only -- col 2 and col 3 always visible */
+footer .footer .footer-nav .columns > div > div:first-child ul {
+  display: none;
+}
+
+footer .footer .footer-nav.footer-nav-expanded .columns > div > div:first-child ul {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 16px 0;
+}
+
+/* col 2 (Our Food...) always visible with breathing room */
+footer .footer .footer-nav .columns > div > div:nth-child(2) {
+  padding: 16px 0 0;
+}
+
+/* section border after the last nav column (col 3) */
+footer .footer .footer-nav .columns > div > div:last-child {
+  padding-top: 16px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgb(0 0 0 / 15%);
+}
+
+/* franchise/cares/partners column: icon + label side by side */
+/* stylelint-disable-next-line no-descending-specificity -- .footer-nav and .footer-social-row are mutually exclusive */
+footer .footer .footer-nav .columns > div > div:last-child ul li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+footer .footer .footer-nav .columns > div > div:last-child ul li p {
+  margin: 0;
+  line-height: 1;
+}
+
+footer .footer .footer-nav .columns > div > div:last-child ul li img {
+  display: block;
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+/* -- Desktop (>= 900px) ------------------------------------- */
 @media (width >= 900px) {
   footer {
-    padding: 0 32px 24px;
+    padding: 0 48px;
   }
 
-  footer .footer > div {
-    padding: 32px 0 0;
+  footer .footer .footer-nav {
+    padding: 56px 0 48px;
+    border-bottom: 1px solid rgb(0 0 0 / 15%);
   }
 
-  footer .footer > div > div:first-child {
-    display: flex;
+  footer .footer .footer-nav h4 {
+    margin: 0 0 20px;
+    padding: 0;
+    cursor: default;
+    border-bottom: none;
+  }
+
+  /* chevron hidden on desktop */
+  footer .footer-nav-chevron {
+    display: none;
+  }
+
+  /* 3-col nav layout: general rules first (lower specificity) */
+  footer .footer .footer-nav .columns > div {
+    align-items: flex-start;
     gap: 48px;
   }
 
-  footer .footer > div > div:first-child ul {
-    display: flex;
-    gap: 24px;
-    margin: 0;
+  footer .footer .footer-nav .columns > div > div {
+    flex: 0 0 auto;
   }
 
-  footer .footer > div > div:first-child ul li {
-    margin: 0;
+  /* col 1 links always visible on desktop */
+  footer .footer .footer-nav .columns > div > div:first-child ul {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  /* reset mobile col 2 padding */
+  footer .footer .footer-nav .columns > div > div:nth-child(2) {
+    padding: 0;
+  }
+
+  /* col 3: push to far right, reset mobile padding and border */
+  footer .footer .footer-nav .columns > div > div:last-child {
+    margin-left: auto;
+    padding: 0;
+    border-bottom: none;
+  }
+
+  /* social row: logo left, icons+badges right-aligned */
+  footer .footer .footer-social-row {
+    padding: 32px 0;
+  }
+
+  /* stylelint-disable-next-line no-descending-specificity -- .footer-nav and .footer-social-row are mutually exclusive */
+  footer .footer .footer-social-row .columns > div {
+    align-items: center;
+  }
+
+  footer .footer .footer-social-row .columns > div > .columns-img-col {
+    order: unset;
+    padding-top: 0;
+  }
+
+  footer .footer .footer-social-row .columns > div > div:not(.columns-img-col) {
+    order: unset;
+  }
+
+  footer .footer .footer-social-row .columns > div > div:first-child {
+    flex: 0 0 auto;
+  }
+
+  /* col shrinks to content width, margin-left: auto pushes it to the right */
+  footer .footer .footer-social-row .columns > div > div:last-child {
+    flex: 0 0 auto;
+    margin-left: auto;
   }
 }
