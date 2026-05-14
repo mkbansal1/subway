@@ -120,18 +120,47 @@
   text-decoration: none;
 }
 
-/* image link inside menu-grid should not look like a button */
+/* all links inside menu-grid should be plain text, not buttons */
 .cards.menu-grid .cards-card-image .button-wrapper {
   margin: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 16px;
 }
 
 /* stylelint-disable-next-line no-descending-specificity */
 .cards.menu-grid .cards-card-image a.button {
   background-color: transparent;
   border-color: transparent;
+  color: var(--green-dark);
   padding: 0;
   border-radius: 0;
+  font-size: var(--heading-font-size-m);
+  font-weight: 500;
+  white-space: normal;
+  overflow: visible;
+  text-align: left;
+}
+
+.cards.menu-grid .cards-card-image a.button:hover {
+  background-color: transparent;
+  border-color: transparent;
+  color: var(--green-primary);
+  text-decoration: none;
+}
+
+/* image inside menu-grid link */
+.cards.menu-grid .cards-card-image a:has(picture) {
   display: block;
+  line-height: 0;
+  flex: 0 0 auto;
+}
+
+.cards.menu-grid .cards-card-image a:has(picture) img {
+  width: 140px;
+  height: auto;
+  object-fit: contain;
 }
 
 /* desktop heading + button row for menu section */
@@ -167,10 +196,20 @@
     padding: 16px 0;
   }
 
-  .cards.menu-grid .cards-card-image img {
+  .cards.menu-grid .cards-card-image .button-wrapper {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .cards.menu-grid .cards-card-image a:has(picture) img {
     width: 100%;
     max-width: 240px;
-    height: auto;
+  }
+
+  .cards.menu-grid .cards-card-image a.button {
+    text-align: center;
+    font-size: var(--heading-font-size-s);
   }
 
   .cards.menu-grid .cards-card-body {
@@ -191,8 +230,12 @@
     gap: 24px;
   }
 
-  .cards.menu-grid .cards-card-image img {
+  .cards.menu-grid .cards-card-image a:has(picture) img {
     max-width: 280px;
+  }
+
+  .cards.menu-grid .cards-card-image a.button {
+    font-size: var(--heading-font-size-m);
   }
 
   .cards.menu-grid .cards-card-body h5,
