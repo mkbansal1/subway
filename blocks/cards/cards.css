@@ -253,4 +253,10 @@
     order: 0;
     margin: 0;
   }
+
+  /* wider padding for menu section on desktop */
+  .cards-container > div {
+    max-width: 1400px;
+    padding: 0 64px;
+  }
 }
